@@ -1,5 +1,10 @@
 # PropayClient
 
+
+
+[![Gem Version](https://img.shields.io/gem/v/propay_client)](https://github.com/nikneroz/propay_client)
+[![Downloads](https://img.shields.io/gem/dt/propay_client)](https://github.com/nikneroz/propay_client)
+
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/propay_client`. To experiment with that code, run `bin/console` for an interactive prompt.
 
 TODO: Delete this and the text above, and describe your gem
@@ -9,7 +14,7 @@ TODO: Delete this and the text above, and describe your gem
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'propay_client'
+gem 'propay_client', '~> 0.1.0'
 ```
 
 And then execute:
