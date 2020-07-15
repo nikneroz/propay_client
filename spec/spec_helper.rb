@@ -1,5 +1,8 @@
 require "bundler/setup"
 require "propay_client"
+require 'dotenv'
+
+Dotenv.load('.test.env')
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure

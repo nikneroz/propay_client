@@ -22,6 +22,33 @@ Or install it yourself as:
 
 ## Usage
 
+API Authorization. You will need to get personal certificate. Convert this to token and use for API requests.
+[Documentation](https://www.propay.com/en-US/Documents/API-Docs/ProtectPay-API-Manual-REST "ProtectPay-API-Manual-REST")
+
+```
+The REST interface uses Basic HTTP Authentication for API requests, with the CertStr as the username and the TermId as the password. This must be added to the HTTP header as the value of the ‘Authorization’ field. Creating the Authorization Header value requires the following steps:
+1. Combine the CertStr, a Colon, and the termId (MyCertStr:MyTermId). If a termId has not been provided only use the CertStr without a colon
+(MyCertStr).
+2. Convert the Result of Step 1 to an ASCII Byte Array
+3. Base 64 Encode the Result of Step 2
+4. Prepend “Basic “ to the Result of Step 3
+5. Add ‘Authorization’ as an HTTP header and set its value to the result of Step 4
+```
+
+
+API Authentication
+[Documentation](https://www.propay.com/en-US/Documents/API-Docs/ProtectPay-API-Manual-REST "ProtectPay-API-Manual-REST")
+
+```
+The REST interface uses Basic HTTP Authentication to authenticate API requests using the BillerId as the username and the Authentication Token as the password. This must be added to the HTTP header as the value of the ‘Authorization’ field.
+Creating the Authorization Header value requires the following steps:
+1. Combine the BillerID, a Colon, and the AuthToken (MyBillerId:MyAuthToken)
+2. Convert the Result of Step 1 to an ASCII Byte Array
+3. Base 64 Encode the Result of Step 2
+4. Prepend “Basic “ to the Result of Step 3
+5. Add ‘Authorization’ as an HTTP header and set its value to the result of Step 4
+```
+
 TODO: Write usage instructions here
 
 ## Development
