@@ -1,10 +1,9 @@
 # PropayClient
 
-
-
 [![Gem Version](https://img.shields.io/gem/v/propay_client)](https://github.com/nikneroz/propay_client)
-[![Build](https://img.shields.io/travis/com/nikneroz/propay_client)](https://travis-ci.com/github/nikneroz/propay_client)
 [![Downloads](https://img.shields.io/gem/dt/propay_client)](https://github.com/nikneroz/propay_client)
+[![Build](https://img.shields.io/travis/com/nikneroz/propay_client)](https://travis-ci.com/github/nikneroz/propay_client)
+[![CodeCov](https://img.shields.io/codecov/c/github/nikneroz/propay_client)](https://codecov.io/gh/nikneroz/propay_client)
 
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/propay_client`. To experiment with that code, run `bin/console` for an interactive prompt.
 
