@@ -10,7 +10,7 @@ http_interactions:
       Content-Type:
       - application/json
       Authorization:
-      - Basic <API_TOKEN>
+      - Basic <API_KEY>
   response:
     status:
       code: 400

@@ -22,7 +22,19 @@ Or install it yourself as:
 
 ## Usage
 
-API Authorization. You will need to get personal certificate. Convert this to token and use for API requests.
+```
+# config/initializers/propay_client.rb
+
+require 'propay_client'
+
+PropayClient.configure do |config|
+  config.api_key = ENV['API_KEY']
+  config.endpoint = ENV['ENDPOINT']
+end
+```
+
+### API Authorization.
+You will need to get personal certificate. Convert this to token and use for API requests.
 [Documentation](https://www.propay.com/en-US/Documents/API-Docs/ProtectPay-API-Manual-REST "ProtectPay-API-Manual-REST")
 
 ```
@@ -35,8 +47,7 @@ The REST interface uses Basic HTTP Authentication for API requests, with the Cer
 5. Add ‘Authorization’ as an HTTP header and set its value to the result of Step 4
 ```
 
-
-API Authentication
+### API Authentication
 [Documentation](https://www.propay.com/en-US/Documents/API-Docs/ProtectPay-API-Manual-REST "ProtectPay-API-Manual-REST")
 
 ```
@@ -48,8 +59,6 @@ Creating the Authorization Header value requires the following steps:
 4. Prepend “Basic “ to the Result of Step 3
 5. Add ‘Authorization’ as an HTTP header and set its value to the result of Step 4
 ```
-
-TODO: Write usage instructions here
 
 ## Development
 

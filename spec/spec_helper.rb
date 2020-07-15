@@ -9,8 +9,9 @@ Dotenv.load('.test.env')
 VCR.configure do |config|
   config.cassette_library_dir = 'fixtures/vcr_cassettes'
   config.hook_into :excon
-  config.filter_sensitive_data('<API_TOKEN>') { ENV['API_TOKEN'] }
+  config.filter_sensitive_data('<API_KEY>') { ENV['API_KEY'] }
 end
+
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
@@ -27,5 +28,12 @@ RSpec.configure do |config|
 
   config.before(:suite) do
     FactoryBot.find_definitions
+  end
+
+  config.before(:all) do
+    PropayClient.configure do |config|
+      config.api_key = ENV['API_KEY']
+      config.endpoint = ENV['ENDPOINT']
+    end
   end
 end
