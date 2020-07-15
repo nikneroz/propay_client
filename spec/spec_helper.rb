@@ -37,3 +37,8 @@ RSpec.configure do |config|
     end
   end
 end
+
+require 'simplecov'
+require 'codecov'
+SimpleCov.formatter = SimpleCov::Formatter::Codecov
+SimpleCov.start

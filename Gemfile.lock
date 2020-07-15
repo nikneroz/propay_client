@@ -25,28 +25,61 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
       zeitwerk (~> 2.2, >= 2.2.2)
+    addressable (2.4.0)
+    backports (3.18.1)
     builder (3.2.4)
+    codecov (0.2.1)
+      colorize
+      json
+      simplecov
+    colorize (0.8.1)
     concurrent-ruby (1.1.6)
     crass (1.0.6)
     diff-lcs (1.4.4)
+    docile (1.3.2)
     dotenv (2.7.6)
     dotenv-rails (2.7.6)
       dotenv (= 2.7.6)
       railties (>= 3.2)
     erubi (1.9.0)
+    ethon (0.12.0)
+      ffi (>= 1.3.0)
     excon (0.75.0)
     factory_bot (6.1.0)
       activesupport (>= 5.0.0)
+    faraday (0.17.3)
+      multipart-post (>= 1.2, < 3)
+    faraday_middleware (0.14.0)
+      faraday (>= 0.7.4, < 1.0)
+    ffi (1.13.1)
+    gh (0.15.1)
+      addressable (~> 2.4.0)
+      backports
+      faraday (~> 0.8)
+      multi_json (~> 1.0)
+      net-http-persistent (~> 2.9)
+      net-http-pipeline
+    highline (1.7.10)
     i18n (1.8.3)
       concurrent-ruby (~> 1.0)
+    json (2.3.1)
+    launchy (2.4.3)
+      addressable (~> 2.3)
     loofah (2.6.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
     method_source (1.0.0)
     mini_portile2 (2.4.0)
     minitest (5.14.1)
+    multi_json (1.15.0)
+    multipart-post (2.1.1)
+    net-http-persistent (2.9.4)
+    net-http-pipeline (1.0.1)
     nokogiri (1.10.10)
       mini_portile2 (~> 2.4.0)
+    pusher-client (0.6.2)
+      json
+      websocket (~> 1.0)
     rack (2.2.3)
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
@@ -75,23 +108,41 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.9.0)
     rspec-support (3.9.3)
+    simplecov (0.18.5)
+      docile (~> 1.1)
+      simplecov-html (~> 0.11)
+    simplecov-html (0.12.2)
     thor (1.0.1)
     thread_safe (0.3.6)
+    travis (1.8.13)
+      backports
+      faraday (~> 0.9)
+      faraday_middleware (~> 0.9, >= 0.9.1)
+      gh (~> 0.13)
+      highline (~> 1.6)
+      launchy (~> 2.1)
+      pusher-client (~> 0.4)
+      typhoeus (~> 0.6, >= 0.6.8)
+    typhoeus (0.8.0)
+      ethon (>= 0.8.0)
     tzinfo (1.2.7)
       thread_safe (~> 0.1)
     vcr (6.0.0)
+    websocket (1.2.8)
     zeitwerk (2.4.0)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  codecov
   dotenv-rails
   excon (~> 0.75.0)
   factory_bot
   propay_client!
   rake (~> 12.0)
   rspec (~> 3.0)
+  travis (~> 1.8, >= 1.8.8)
   vcr (~> 6.0)
 
 BUNDLED WITH
