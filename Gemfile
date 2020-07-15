@@ -5,4 +5,7 @@ gemspec
 
 gem "rake", "~> 12.0"
 gem "rspec", "~> 3.0"
-gem 'dotenv-rails', groups: [:development, :test]
+gem "excon", "~> 0.75.0"
+gem "factory_bot"
+gem "dotenv-rails", groups: [:development, :test]
+gem "vcr", "~> 6.0", groups: [:development, :test]

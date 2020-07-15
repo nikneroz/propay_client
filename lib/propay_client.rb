@@ -1,4 +1,5 @@
 require "propay_client/version"
+require "propay_client/api"
 
 module PropayClient
   class Error < StandardError; end

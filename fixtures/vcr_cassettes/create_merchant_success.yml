@@ -1,0 +1,44 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: https://xmltestapi.propay.com/propayapi/signup
+    body:
+      encoding: UTF-8
+      string: '{"PersonalData":{"FirstName":"First","MiddleInitial":"X","LastName":"Last","DateOfBirth":"01-01-1981","SocialSecurityNumber":"123456789","SourceEmail":"ProPaytest@test.com","NotificationEmail":"Partner@Partner.com","PhoneInformation":{"DayPhone":"8888888888","EveningPhone":"8888888888"}},"SignupAccountData":{"CurrencyCode":"USD","Tier":"Test"},"BusinessData":{"BusinessLegalName":"Merchantile
+        Parent, Inc.","DoingBusinessAs":"Merchantile ABC","EIN":"121232343","MerchantCategoryCode":"5999","WebsiteURL":"http://Propay.com","BusinessDescription":"Accounting
+        Services","MonthlyBankCardVolume":10000,"AverageTicket":100,"HighestTicket":250},"Address":{"ApartmentNumber":"1","Address1":"3400
+        N Ashton Blvd","Address2":"Suite 200","City":"Lehi","State":"UT","Country":"USA","Zip":"84043"},"BusinessAddress":{"ApartmentNumber":"200","Address1":"RR
+        123445","Address2":"SW","City":"Tooele","State":"UT","Country":"USA","Zip":"84074"},"BankAccount":{"AccountCountryCode":"USA","BankAccountNumber":"123456789","RoutingNumber":"011306829","AccountOwnershipType":"Business","BankName":"MERCHANTILE
+        BANK UT","AccountType":"Checking","AccountName":null,"Description":null},"BeneficialOwnerData":{"OwnerCount":"1","Owners":[{"FirstName":"First1","LastName":"Last1","SSN":"123456789","DateOfBirth":"01-01-1981","Email":"test1@qamail.com","Address":"Address","City":"Lehi","State":"UT","Zip":"84010","Country":"USA","Title":"CEO","Percentage":"100"}]}}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - Basic <API_TOKEN>
+  response:
+    status:
+      code: 200
+      message:
+    headers:
+      Cache-Control:
+      - private
+      Content-Type:
+      - application/json; charset=utf-8
+      Server:
+      - Microsoft-IIS/10.0
+      Set-Cookie:
+      - ASP.NET_SessionId=yenumsz1kcrnyf5z4bobiuj0; path=/; HttpOnly
+      X-AspNet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Wed, 15 Jul 2020 16:33:22 GMT
+      Content-Length:
+      - '111'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"AccountNumber":123456,"BeneficialOwnerDataResult":[{"FirstName":"First1","LastName":"Last1","Status":"Validated"}],"Password":"TempPassw0rd","SourceEmail":"ProPaytest@test.com","Status":"00","Tier":"Test"}'
+  recorded_at: Wed, 15 Jul 2020 16:33:22 GMT
+recorded_with: VCR 6.0.0
