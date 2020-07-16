@@ -86,5 +86,24 @@ RSpec.describe PropayClient::Merchant do
         })
       end
     end
+
+    it "edit merchant renewal payment method success" do
+      VCR.use_cassette "edit_merchant_renewal_payment_method_success" do
+        params = {
+          "AccountNumber" => 123456,
+          "CreditCardData" => nil,
+          "PaymentBank" => {
+            "AccountNumber" => "7654321",
+            "RoutingNumber" => "324079555",
+            "AccountType" => "Savings"
+          }
+        }
+        body = PropayClient::Merchant.edit_merchant_renewal_payment_method(123456, params)
+        expect(body).to eq({
+          "AccountNumber" => 123456,
+          "Status" => "59"
+        })
+      end
+    end
   end
 end

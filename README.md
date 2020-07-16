@@ -43,7 +43,7 @@ end
 
 #### Creation
 ```ruby
-  Propay::Merchant.create(params)
+  PropayClient::Merchant.create(params)
 ```
 
 #### Editing
@@ -87,6 +87,19 @@ end
     }
   }
   PropayClient::Merchant.edit_merchant_address(123456, params)
+
+  # Renewal Payment Method
+  params = {
+    "AccountNumber" => 123456,
+    "CreditCardData" => nil,
+    "PaymentBank" => {
+      "AccountNumber" => "7654321",
+      "RoutingNumber" => "324079555",
+      "AccountType" => "Savings"
+    }
+  }
+  PropayClient::Merchant.edit_merchant_renewal_payment_method(123456, params)
+
 ```
 
 ### API Authorization.
