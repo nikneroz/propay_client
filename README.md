@@ -14,7 +14,7 @@ TODO: Delete this and the text above, and describe your gem
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'propay_client', '~> 0.1.0'
+gem 'propay_client', '~> 0.2.0'
 ```
 
 And then execute:
