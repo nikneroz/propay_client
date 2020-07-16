@@ -190,5 +190,43 @@ RSpec.describe PropayClient::Merchant do
         })
       end
     end
+
+    it "edit merchant services success" do
+      VCR.use_cassette "edit_merchant_services_success" do
+        params = {
+          "AccountNumber" => 123456,
+          "CcProcessing" => true,
+          "ACHOut" => true,
+          "ACHIn" => true,
+          "ProPayOut" => true,
+          "ProPayIn" => true,
+          "SoftLimitEnabled" => "y",
+          "AchPaymentSoftLimitEnabled" => "y",
+          "CreditCardMonthLimit" => 0,
+          "CreditCardTransactionLimit" => 0,
+          "SoftLimitAchOffPercent" => 0,
+          "AchPaymentAchOffPercent" => 0
+        }
+        body = PropayClient::Merchant.edit_services(123456, params)
+        expect(body).to eq({
+          "AccountNumber" => 123456,
+          "Status" => "65"
+        })
+      end
+    end
+
+    it "edit merchant status success" do
+      VCR.use_cassette "edit_merchant_status_success" do
+        params = {
+          "AccountNumber" => 123456,
+          "MerchantStatus" => "Canceled"
+        }
+        body = PropayClient::Merchant.edit_status(123456, params)
+        expect(body).to eq({
+          "AccountNumber" => 123456,
+          "Status" => "59"
+        })
+      end
+    end
   end
 end

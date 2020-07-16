@@ -28,5 +28,13 @@ module PropayClient
     def self.edit_gross_settle_payment_info(account_number, params)
       put("/propayAPI/MerchantGrossSettleBilling/#{account_number}", body: params)
     end
+
+    def self.edit_services(account_number, params)
+      put("/propayAPI/MerchantServices/#{account_number}", body: params)
+    end
+    
+    def self.edit_status(account_number, params)
+      put("/propayAPI/MerchantStatus/#{account_number}", body: params)
+    end
   end
 end

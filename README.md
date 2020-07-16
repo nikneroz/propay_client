@@ -163,6 +163,13 @@ end
     }
   }
   PropayClient::Merchant.edit_gross_settle_payment_info(123456, params)
+
+  # Status
+  params = {
+    "AccountNumber" => 123456,
+    "MerchantStatus" => "Canceled"
+  }
+  PropayClient::Merchant.edit_status(123456, params)
 ```
 
 ### API Authorization.
