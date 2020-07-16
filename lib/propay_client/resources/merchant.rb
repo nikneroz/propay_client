@@ -4,5 +4,9 @@ module PropayClient
     def self.create(params)
       put("/propayapi/signup", body: params)
     end
+
+    def self.edit_merchant_contact_info(account_number, params)
+      put("/propayAPI/MerchantContactInfo/#{account_number}", body: params)
+    end
   end
 end

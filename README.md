@@ -39,14 +39,35 @@ end
 ```
 
 ### Merchant
+[Documentation](https://www.propay.com/en-US/Documents/API-Docs/ProPay-API-Manual-REST)
 
+#### Creation
 ```ruby
   Propay::Merchant.create(params)
+```
+
+#### Editing
+```ruby
+  params = {
+    "AccountNumber" => 123456,
+    "PersonalData" => {
+      "FirstName" => "Bob",
+      "MiddleInitial" => "N",
+      "LastName" => "Takanawa",
+      "SourceEmail" => "200514042252msedit@propay.com",
+      "PhoneInformation" => { 
+        "DayPhone" => 8015555555,
+        "EveningPhone" => 8015555555}
+    },
+    "ExternalId" => "200514042252"
+  }
+  PropayClient::Merchant.edit_merchant_contact_info(123456, params)
 ```
 
 ### API Authorization.
 You will need to get personal certificate. Convert this to token and use for API requests.
 [Documentation](https://www.propay.com/en-US/Documents/API-Docs/ProtectPay-API-Manual-REST "ProtectPay-API-Manual-REST")
+
 
 ```
 The REST interface uses Basic HTTP Authentication for API requests, with the CertStr as the username and the TermId as the password. This must be added to the HTTP header as the value of the ‘Authorization’ field. Creating the Authorization Header value requires the following steps:
