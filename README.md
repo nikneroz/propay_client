@@ -43,7 +43,19 @@ end
 
 #### Creation
 ```ruby
+  # Account Creation
   PropayClient::Merchant.create(params)
+
+  # Account Renewal
+  params = {
+    "accountNum" => 123456,
+    "CVV2" => 999,
+    "tier"  => "194e4047-69b5-4e7c-b",
+    "ccNum" => "4111111111111111",
+    "expDate" =>"1221",
+    "zip" => "12345"
+  }
+  PropayClient::Account.renewal(params)
 ```
 
 #### Editing

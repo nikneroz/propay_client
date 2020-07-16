@@ -1,0 +1,39 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: https://xmltestapi.propay.com/propayapi/renewal
+    body:
+      encoding: UTF-8
+      string: '{"accountNum":123456,"CVV2":999,"tier":"194e4047-69b5-4e7c-b","ccNum":"4111111111111111","expDate":"1221","zip":"12345"}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - Basic <API_KEY>
+  response:
+    status:
+      code: 200
+      message:
+    headers:
+      Cache-Control:
+      - private
+      Content-Type:
+      - application/json; charset=utf-8
+      Server:
+      - Microsoft-IIS/10.0
+      Set-Cookie:
+      - ASP.NET_SessionId=hjerll21zyzo2spgh5nm4zeu; path=/; HttpOnly
+      X-AspNet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Thu, 16 Jul 2020 16:15:24 GMT
+      Content-Length:
+      - '45'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"AccountNumber":123456,"Status":"59","Tier":"194e4047-69b5-4e7c-b"}'
+  recorded_at: Thu, 16 Jul 2020 16:15:24 GMT
+recorded_with: VCR 6.0.0
