@@ -27,7 +27,7 @@ Or install it yourself as:
 
 ## Usage
 
-```
+```ruby
 # config/initializers/propay_client.rb
 
 require 'propay_client'
@@ -36,6 +36,12 @@ PropayClient.configure do |config|
   config.api_key = ENV['API_KEY']
   config.endpoint = ENV['ENDPOINT']
 end
+```
+
+### Merchant
+
+```ruby
+  Propay::Merchant.create(params)
 ```
 
 ### API Authorization.
@@ -63,12 +69,6 @@ Creating the Authorization Header value requires the following steps:
 3. Base 64 Encode the Result of Step 2
 4. Prepend “Basic “ to the Result of Step 3
 5. Add ‘Authorization’ as an HTTP header and set its value to the result of Step 4
-```
-
-### Merchant
-
-```ruby
-  Propay::Merchant.create(params)
 ```
 
 ## Development
