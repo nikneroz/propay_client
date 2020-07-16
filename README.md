@@ -126,6 +126,21 @@ end
     }
   }
   PropayClient::Merchant.edit_business_info(123456, params)
+
+  # Bank Account
+  params = {
+    "AccountNumber" => 123456,
+    "IsSecondaryBankAccount" => false,
+    "BankAccount" => {
+      "AccountCountryCode" => "USA",
+      "BankAccountNumber" => 111111111,
+      "RoutingNumber" => "091000019",
+      "AccountOwnershipType" => "Business",
+      "BankName" => "Bank Name",
+      "AccountType" => "Checking"
+    }
+  }
+  PropayClient::Merchant.edit_bank_account(123456, params)
 ```
 
 ### API Authorization.

@@ -18,7 +18,11 @@ module PropayClient
     end
 
     def self.edit_business_info(account_number, params)
-      put("/propayAPI/MerchantPaymentInformation/#{account_number}", body: params)
+      put("/propayAPI/MerchantBusinessInfo/#{account_number}", body: params)
+    end
+
+    def self.edit_bank_account(account_number, params)
+      put("/propayAPI/MerchantBankAccount/#{account_number}", body: params)
     end
   end
 end

@@ -139,5 +139,27 @@ RSpec.describe PropayClient::Merchant do
         })
       end
     end
+
+    it "edit merchant bank account success" do
+      VCR.use_cassette "edit_merchant_bank_account_success" do
+        params = {
+          "AccountNumber" => 123456,
+          "IsSecondaryBankAccount" => false,
+          "BankAccount" => {
+            "AccountCountryCode" => "USA",
+            "BankAccountNumber" => 111111111,
+            "RoutingNumber" => "091000019",
+            "AccountOwnershipType" => "Business",
+            "BankName" => "Bank Name",
+            "AccountType" => "Checking"
+          }
+        }
+        body = PropayClient::Merchant.edit_bank_account(123456, params)
+        expect(body).to eq({
+          "AccountNumber" => 123456,
+          "Status" => "59"
+        })
+      end
+    end
   end
 end

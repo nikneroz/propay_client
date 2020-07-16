@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: put
-    uri: https://xmltestapi.propay.com/propayAPI/MerchantPaymentInformation/123456
+    uri: https://xmltestapi.propay.com/propayAPI/MerchantBusinessInfo/123456
     body:
       encoding: UTF-8
       string: '{"AccountNumber":123456,"AuthorizedSignerFirstName":"TestFirstName","AuthorizedSignerLastName":"TestLastName","AuthorizedSignerTitle":"TestTitle","BusinessData":{"BusinessLegalName":"Testlegalname","DoingBusinessAs":"TestDBA","EIN":"584384656","WebsiteURL":"www.test.com","BusinessDescription":"Test
@@ -24,17 +24,17 @@ http_interactions:
       Server:
       - Microsoft-IIS/10.0
       Set-Cookie:
-      - ASP.NET_SessionId=jnbiuxzxune0ojw22wmv24k1; path=/; HttpOnly
+      - ASP.NET_SessionId=sblxjhhd2agc0dnyn1q2530g; path=/; HttpOnly
       X-AspNet-Version:
       - 4.0.30319
       X-Powered-By:
       - ASP.NET
       Date:
-      - Thu, 16 Jul 2020 15:48:22 GMT
+      - Thu, 16 Jul 2020 15:51:26 GMT
       Content-Length:
       - '38'
     body:
       encoding: ASCII-8BIT
       string: '{"AccountNumber":123456,"Status":"59"}'
-  recorded_at: Thu, 16 Jul 2020 15:48:21 GMT
+  recorded_at: Thu, 16 Jul 2020 15:51:26 GMT
 recorded_with: VCR 6.0.0

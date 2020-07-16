@@ -1,0 +1,40 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: https://xmltestapi.propay.com/propayAPI/MerchantBankAccount/123456
+    body:
+      encoding: UTF-8
+      string: '{"AccountNumber":123456,"IsSecondaryBankAccount":false,"BankAccount":{"AccountCountryCode":"USA","BankAccountNumber":111111111,"RoutingNumber":"091000019","AccountOwnershipType":"Business","BankName":"Bank
+        Name","AccountType":"Checking"}}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - Basic <API_KEY>
+  response:
+    status:
+      code: 200
+      message:
+    headers:
+      Cache-Control:
+      - private
+      Content-Type:
+      - application/json; charset=utf-8
+      Server:
+      - Microsoft-IIS/10.0
+      Set-Cookie:
+      - ASP.NET_SessionId=0vpi4pg1lb4y0xqhzlxofetf; path=/; HttpOnly
+      X-AspNet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Thu, 16 Jul 2020 15:54:58 GMT
+      Content-Length:
+      - '38'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"AccountNumber":123456,"Status":"59"}'
+  recorded_at: Thu, 16 Jul 2020 15:54:59 GMT
+recorded_with: VCR 6.0.0
