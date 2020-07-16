@@ -55,5 +55,36 @@ RSpec.describe PropayClient::Merchant do
         })
       end
     end
+
+    it "edit merchant address success" do
+      VCR.use_cassette "edit_merchant_address_success" do
+        params = {
+          "AccountNumber" => 123456,
+          "Address" => {
+            "ApartmentNumber" => "K",
+            "Address1" => "123 New Street",
+            "Address2" => "Some address2",
+            "City" => "LA",
+            "State" => "CA",
+            "Country" => "USA",
+            "Zip" => "90210"
+          },
+          "MailAddress": {
+            "ApartmentNumber": nil,
+            "Address1" => "PO Box 111",
+            "Address2" => "Some street",
+            "City" => "LA",
+            "State" => "CA",
+            "Country" => "USA",
+            "Zip" => "90210"
+          }
+        }
+        body = PropayClient::Merchant.edit_merchant_address(123456, params)
+        expect(body).to eq({
+          "AccountNumber" => 123456,
+          "Status" => "59"
+        })
+      end
+    end
   end
 end

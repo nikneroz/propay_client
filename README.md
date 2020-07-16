@@ -48,6 +48,7 @@ end
 
 #### Editing
 ```ruby
+  # Contact Info
   params = {
     "AccountNumber" => 123456,
     "PersonalData" => {
@@ -62,6 +63,30 @@ end
     "ExternalId" => "200514042252"
   }
   PropayClient::Merchant.edit_merchant_contact_info(123456, params)
+
+  # Address
+  params = {
+    "AccountNumber" => 123456,
+    "Address" => {
+      "ApartmentNumber" => "K",
+      "Address1" => "123 New Street",
+      "Address2" => "Some address2",
+      "City" => "LA",
+      "State" => "CA",
+      "Country" => "USA",
+      "Zip" => "90210"
+    },
+    "MailAddress": {
+      "ApartmentNumber": nil,
+      "Address1" => "PO Box 111",
+      "Address2" => "Some street",
+      "City" => "LA",
+      "State" => "CA",
+      "Country" => "USA",
+      "Zip" => "90210"
+    }
+  }
+  PropayClient::Merchant.edit_merchant_address(123456, params)
 ```
 
 ### API Authorization.
