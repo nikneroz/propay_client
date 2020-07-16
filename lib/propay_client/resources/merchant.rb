@@ -5,6 +5,10 @@ module PropayClient
       put("/propayapi/signup", body: params)
     end
 
+    def self.balance(account_number)
+      get("/propayAPI/MerchantBalanceDetails/#{account_number}")
+    end
+
     def self.edit_contact_info(account_number, params)
       put("/propayAPI/MerchantContactInfo/#{account_number}", body: params)
     end

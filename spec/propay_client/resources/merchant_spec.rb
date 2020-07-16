@@ -32,6 +32,19 @@ RSpec.describe PropayClient::Merchant do
     end
   end
 
+  context "management" do
+    it "merchant balance success" do
+      VCR.use_cassette "merchant_balance_success" do
+        account_number = 123456
+        body = PropayClient::Merchant.balance(account_number)
+        expect(body).to eq({
+          "AccountNumber" => 123456,
+          "Status"=>"59"
+        })
+      end
+    end
+  end
+
   context "edit" do
     it "edit merchant contact info success" do
       VCR.use_cassette "edit_merchant_contact_info_success" do

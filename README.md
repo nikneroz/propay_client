@@ -46,6 +46,10 @@ end
   # Account Creation
   PropayClient::Merchant.create(params)
 
+  # Get current ProPay Account Balance
+  account_number = 123456
+  body = PropayClient::Merchant.balance(account_number)
+
   # Account Renewal
   params = {
     "accountNum" => 123456,
@@ -82,6 +86,35 @@ end
   }
   PropayClient::Card.create(123456, params)
   PropayClient::Card.update(123456, params)
+
+  # Flash Funds –Push Funds to On-File Card
+  params = {
+    "accountNum" => 123456,
+    "amount" => "1000"
+  }
+  PropayClient::Card.push_funds_to_flash_funds_card(123456, params)
+
+  # ProPay Account Payment Disbursement
+  params = {
+    "amount": 100,
+    "invNum": "Test Invoice Number",
+    "comment1":"Test Comment 1",
+    "comment2":"Test Comment 2",
+    "recAccntNum": "123456"
+  }
+  body = PropayClient::Payment.propay_to_propay(params)
+
+  # SplitFunds froma ProPay Transaction(Timed Pull)
+  params = {
+    "accountNum" => 123456,
+    "recAccntNum" => 987654,
+    "amount" => 100,
+    "transNum" => 2,
+    "invNum" => "Invoice",
+    "comment1" => "Test Comments",
+    "comment2" => "Test Comments2"
+  }
+  body = PropayClient::Payment.timed_pull(params)
 ```
 
 #### Editing

@@ -2,7 +2,7 @@ require 'spec_helper.rb'
 
 RSpec.describe PropayClient::Card do
   context "management" do
-    it "card create success" do
+    it "creates or updates card success" do
       VCR.use_cassette "card_creation_success" do
         params = {
           "ccNum" => "<card number>",
@@ -16,6 +16,20 @@ RSpec.describe PropayClient::Card do
           "city" => "San Fransisco"
         }
         body = PropayClient::Card.create(123456, params)
+        expect(body).to eq({
+          "AccountNumber" => 123456,
+          "Status" => "79"
+        })
+      end
+    end
+
+    it "pushes funds to flash funds card success" do
+      VCR.use_cassette "pushes_funds_to_flash_funds_card_success" do
+        params = {
+          "accountNum" => 123456,
+          "amount" => "1000"
+        }
+        body = PropayClient::Card.push_funds_to_flash_funds_card(123456, params)
         expect(body).to eq({
           "AccountNumber" => 123456,
           "Status" => "79"
