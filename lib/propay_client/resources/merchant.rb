@@ -36,5 +36,9 @@ module PropayClient
     def self.edit_status(account_number, params)
       put("/propayAPI/MerchantStatus/#{account_number}", body: params)
     end
+
+    def self.edit_credit_limit(account_number, params)
+      put("/propayAPI/MerchantCreditLimit/#{account_number}", body: params)
+    end
   end
 end

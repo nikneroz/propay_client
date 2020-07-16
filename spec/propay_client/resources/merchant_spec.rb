@@ -228,5 +228,19 @@ RSpec.describe PropayClient::Merchant do
         })
       end
     end
+
+    it "edit merchant credit limit success" do
+      VCR.use_cassette "edit_merchant_credit_limit_success" do
+        params = {
+          "AccountNumber" => 123456,
+          "CreditLimit" => 1000
+        }
+        body = PropayClient::Merchant.edit_credit_limit(123456, params)
+        expect(body).to eq({
+          "AccountNumber" => 123456,
+          "Status" => "59"
+        })
+      end
+    end
   end
 end

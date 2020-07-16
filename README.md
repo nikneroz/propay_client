@@ -164,12 +164,36 @@ end
   }
   PropayClient::Merchant.edit_gross_settle_payment_info(123456, params)
 
+  # Services
+  params = {
+    "AccountNumber" => 123456,
+    "CcProcessing" => true,
+    "ACHOut" => true,
+    "ACHIn" => true,
+    "ProPayOut" => true,
+    "ProPayIn" => true,
+    "SoftLimitEnabled" => "y",
+    "AchPaymentSoftLimitEnabled" => "y",
+    "CreditCardMonthLimit" => 0,
+    "CreditCardTransactionLimit" => 0,
+    "SoftLimitAchOffPercent" => 0,
+    "AchPaymentAchOffPercent" => 0
+  }
+  PropayClient::Merchant.edit_services(123456, params)
+
   # Status
   params = {
     "AccountNumber" => 123456,
     "MerchantStatus" => "Canceled"
   }
   PropayClient::Merchant.edit_status(123456, params)
+
+  # Credit Limit
+  params = {
+    "AccountNumber" => 123456,
+    "CreditLimit" => 1000
+  }
+  PropayClient::Merchant.edit_credit_limit(123456, params)
 ```
 
 ### API Authorization.
