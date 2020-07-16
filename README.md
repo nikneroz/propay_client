@@ -56,6 +56,17 @@ end
     "zip" => "12345"
   }
   PropayClient::Account.renewal(params)
+
+  # Document Upload
+  params = {
+    "accountNum" => 123456,
+    "DocumentName" => "Chargeback 1234",
+    "TransactionReference" => "100",
+    "Document" => "BASE64 STRING LESS THAN 5MB",
+    "DocType" => "jpg",
+    "Identification" => "Null"
+  }
+  PropayClient::Document.upload(params)
 ```
 
 #### Editing

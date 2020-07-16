@@ -1,6 +1,6 @@
 require 'spec_helper.rb'
 
-RSpec.describe PropayClient::Merchant do
+RSpec.describe PropayClient::Account do
   context "management" do
     it "account renewal success" do
       VCR.use_cassette "account_renewal_success" do
