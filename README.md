@@ -62,7 +62,7 @@ end
     },
     "ExternalId" => "200514042252"
   }
-  PropayClient::Merchant.edit_merchant_contact_info(123456, params)
+  PropayClient::Merchant.edit_contact_info(123456, params)
 
   # Address
   params = {
@@ -86,7 +86,7 @@ end
       "Zip" => "90210"
     }
   }
-  PropayClient::Merchant.edit_merchant_address(123456, params)
+  PropayClient::Merchant.edit_address(123456, params)
 
   # Renewal Payment Method
   params = {
@@ -98,8 +98,34 @@ end
       "AccountType" => "Savings"
     }
   }
-  PropayClient::Merchant.edit_merchant_renewal_payment_method(123456, params)
+  PropayClient::Merchant.edit_renewal_payment_method(123456, params)
 
+  # Business Info
+  params = {
+    "AccountNumber" => 123456,
+    "AuthorizedSignerFirstName" => "TestFirstName",
+    "AuthorizedSignerLastName" => "TestLastName",
+    "AuthorizedSignerTitle" => "TestTitle",
+    "BusinessData" => {
+      "BusinessLegalName" => "Testlegalname",
+      "DoingBusinessAs" => "TestDBA",
+      "EIN" => "584384656",
+      "WebsiteURL" => "www.test.com",
+      "BusinessDescription" => "Test description",
+      "MonthlyBankCardVolume" => 9000,
+      "HighestTicket" => 1000
+    },
+    "BusinessAddress" => {
+      "ApartmentNumber" => nil,
+      "Address1" => "AddressLine1",
+      "Address2" => "AddressLine2",
+      "City" => "TestCity",
+      "State" => "CA",
+      "Country": nil,
+      "Zip" => "13245"
+    }
+  }
+  PropayClient::Merchant.edit_business_info(123456, params)
 ```
 
 ### API Authorization.
