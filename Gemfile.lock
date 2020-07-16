@@ -26,6 +26,7 @@ GEM
       tzinfo (~> 1.1)
       zeitwerk (~> 2.2, >= 2.2.2)
     addressable (2.4.0)
+    awesome_print (1.8.0)
     backports (3.18.1)
     builder (3.2.4)
     codecov (0.2.1)
@@ -135,6 +136,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  awesome_print (~> 1.8.0)
   codecov
   dotenv-rails
   excon (~> 0.75.0)

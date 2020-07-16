@@ -102,7 +102,7 @@ FactoryBot.define do
     initialize_with{ defaults.merge(attributes) }
   end
 
-  factory :propay_account_request_data, class: Hash do
+  factory :propay_merchant_request_data, class: Hash do
     defaults = {
       "PersonalData" => FactoryBot.build(:personal_data),
       "SignupAccountData" => FactoryBot.build(:signup_account_data),

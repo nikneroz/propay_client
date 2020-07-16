@@ -3,6 +3,7 @@ require 'propay_client'
 require 'dotenv'
 require 'vcr'
 require 'factory_bot'
+require 'awesome_print'
 
 Dotenv.load('.test.env')
 
@@ -11,7 +12,6 @@ VCR.configure do |config|
   config.hook_into :excon
   config.filter_sensitive_data('<API_KEY>') { ENV['API_KEY'] }
 end
-
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure

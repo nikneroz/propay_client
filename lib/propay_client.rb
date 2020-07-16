@@ -1,5 +1,6 @@
 require 'propay_client/configuration'
 require 'propay_client/api'
+require "propay_client/resources"
 require 'propay_client/version'
 
 module PropayClient

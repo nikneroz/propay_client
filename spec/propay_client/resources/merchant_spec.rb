@@ -1,10 +1,10 @@
 require 'spec_helper.rb'
 
-RSpec.describe PropayClient::API::Merchant do
+RSpec.describe PropayClient::Merchant do
   it "create merchant success" do
     VCR.use_cassette "create_merchant_success" do
-      params = build(:propay_account_request_data)
-      body = PropayClient::API::Merchant.create(params)
+      params = build(:propay_merchant_request_data)
+      body = PropayClient::Merchant.create(params)
       expect(body).to eq({
         "AccountNumber" => 123456,
         "BeneficialOwnerDataResult" => [
@@ -24,7 +24,7 @@ RSpec.describe PropayClient::API::Merchant do
 
   it "create merchant failure" do
     VCR.use_cassette "create_merchant_failure" do
-      body = PropayClient::API::Merchant.create({})
+      body = PropayClient::Merchant.create({})
       expect(body).to include('<title>Request Error</title>')
       expect(body).to include("The data contract type 'Propay.Contracts.MS.External.SignupRequest' cannot be deserialized because the required data member 'PersonalData' was not found.")
     end
