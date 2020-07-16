@@ -161,5 +161,34 @@ RSpec.describe PropayClient::Merchant do
         })
       end
     end
+
+    it "edit merchant gross settle payment info success" do
+      VCR.use_cassette "edit_merchant_gross_settle_payment_info_success" do
+        params = {
+          "AccountNumber" => 123456,
+          "GrossBillingInformation" => {
+            "GrossSettleBankAccount" => nil,
+            "GrossSettleAddress" => {
+              "Address1" =>"123 Main Stree",
+              "City" =>"LA",
+              "State" =>"CA",
+              "Country" =>"USA",
+              "Zip" =>"90210"
+            },
+            "GrossSettleCardData" =>{
+              "NameOnCard" =>"Bo Diddley",
+              "CreditCardNumber" =>"<credit card number>",
+              "ExpirationDate" =>"0522"
+            },
+            "GrossSettlePropayAccount" => nil
+          }
+        }
+        body = PropayClient::Merchant.edit_gross_settle_payment_info(123456, params)
+        expect(body).to eq({
+          "AccountNumber" => 123456,
+          "Status" => "59"
+        })
+      end
+    end
   end
 end

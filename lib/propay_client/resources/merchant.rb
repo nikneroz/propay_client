@@ -24,5 +24,9 @@ module PropayClient
     def self.edit_bank_account(account_number, params)
       put("/propayAPI/MerchantBankAccount/#{account_number}", body: params)
     end
+
+    def self.edit_gross_settle_payment_info(account_number, params)
+      put("/propayAPI/MerchantGrossSettleBilling/#{account_number}", body: params)
+    end
   end
 end
