@@ -67,6 +67,21 @@ end
     "Identification" => "Null"
   }
   PropayClient::Document.upload(params)
+
+  # Flash Funds - Add or Change Card Assigned to a ProPay Account
+  params = {
+    "ccNum" => "<card number>",
+    "expDate" => "1020",
+    "accountNum" => 718045866,
+    "CVV2" => "022",
+    "cardholderName" => "Clint Eastwood",
+    "addr" => "900 Metro Center Blv",
+    "zip" => "94404",
+    "state" => "CA",
+    "city" => "San Fransisco"
+  }
+  PropayClient::Card.create(123456, params)
+  PropayClient::Card.update(123456, params)
 ```
 
 #### Editing

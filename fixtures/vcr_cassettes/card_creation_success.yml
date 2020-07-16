@@ -1,0 +1,41 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: https://xmltestapi.propay.com/propayapi/FlashFundsCard/123456
+    body:
+      encoding: UTF-8
+      string: '{"ccNum":"<card number>","expDate":"1020","accountNum":718045866,"CVV2":"022","cardholderName":"Clint
+        Eastwood","addr":"900 Metro Center Blv","zip":"94404","state":"CA","city":"San
+        Fransisco"}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - Basic <API_KEY>
+  response:
+    status:
+      code: 409
+      message:
+    headers:
+      Cache-Control:
+      - private
+      Content-Type:
+      - application/json; charset=utf-8
+      Server:
+      - Microsoft-IIS/10.0
+      Set-Cookie:
+      - ASP.NET_SessionId=yvv2mitqgv40qetimhwezfz5; path=/; HttpOnly
+      X-AspNet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Thu, 16 Jul 2020 16:35:13 GMT
+      Content-Length:
+      - '33'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"AccountNumber":123456,"Status":"79"}'
+  recorded_at: Thu, 16 Jul 2020 16:35:13 GMT
+recorded_with: VCR 6.0.0
