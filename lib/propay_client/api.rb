@@ -24,5 +24,9 @@ module PropayClient
       return JSON.parse(response.body) if response.status == 409
       response.body
     end
+
+    def self.generate_token(cert_str, term_id)
+      Base64.strict_encode64("#{cert_str}:#{term_id}")
+    end
   end
 end

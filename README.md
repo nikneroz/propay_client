@@ -33,7 +33,7 @@ Or install it yourself as:
 require 'propay_client'
 
 PropayClient.configure do |config|
-  config.api_key = ENV['API_KEY']
+  config.api_key = ENV['PROPAY_API_KEY']
   config.endpoint = ENV['ENDPOINT']
 end
 ```

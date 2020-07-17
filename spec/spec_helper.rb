@@ -10,7 +10,7 @@ Dotenv.load('.test.env')
 VCR.configure do |config|
   config.cassette_library_dir = 'fixtures/vcr_cassettes'
   config.hook_into :excon
-  config.filter_sensitive_data('<API_KEY>') { ENV['API_KEY'] }
+  config.filter_sensitive_data('<PROPAY_API_KEY>') { ENV['PROPAY_API_KEY'] }
 end
 
 RSpec.configure do |config|
@@ -32,13 +32,13 @@ RSpec.configure do |config|
 
   config.before(:all) do
     PropayClient.configure do |config|
-      config.api_key = ENV['API_KEY']
+      config.api_key = ENV['PROPAY_API_KEY']
       config.endpoint = ENV['ENDPOINT']
     end
   end
 end
 
-require 'simplecov'
-require 'codecov'
-SimpleCov.formatter = SimpleCov::Formatter::Codecov
-SimpleCov.start
+# require 'simplecov'
+# require 'codecov'
+# SimpleCov.formatter = SimpleCov::Formatter::Codecov
+# SimpleCov.start

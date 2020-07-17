@@ -12,7 +12,7 @@ http_interactions:
       Content-Type:
       - application/json
       Authorization:
-      - Basic <API_KEY>
+      - Basic <PROPAY_API_KEY>
   response:
     status:
       code: 409

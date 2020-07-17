@@ -12,3 +12,5 @@
 
 .development.env
 .test.env
+
+CARDOG.md
